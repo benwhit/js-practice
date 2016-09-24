@@ -44,7 +44,7 @@ exports.arraysAnswers = {
       }
     }
 
-  return arr;
+    return arr;
 
   },
 
@@ -105,10 +105,17 @@ exports.arraysAnswers = {
   },
 
   square : function(arr) {
-
+    var result = arr.map(function(item, index, array) {
+      return item * item;
+    });
+    return result;
   },
 
   findAllOccurrences : function(arr, target) {
-
+    var result = [];
+    arr.find(function(el, index, arr){
+      if(el==target){ result.push(index); }
+    });
+    return result;
   }
 };
